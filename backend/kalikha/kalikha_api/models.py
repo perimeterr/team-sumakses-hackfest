@@ -75,6 +75,39 @@ class UpcyclerProfile(models.Model):
     def __str__(self):
         return self.name_or_organization
 
+class ProviderProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, related_name='provider_profile')
+    # Add other profile fields specific to providers if needed.  Include all the fields from the resource listing, and any others.
+    company_name = models.CharField(max_length=255, blank=True, verbose_name="Company Name")
+    address = models.TextField(blank=True, verbose_name="Company Address")
+    contact_person = models.CharField(max_length=255, blank=True, verbose_name="Contact Person")
+    material_category = models.CharField(
+        max_length=20,
+        choices=ResourceListing.MATERIAL_CATEGORY_CHOICES,
+        verbose_name="Material Category"
+    )
+    description = models.TextField(verbose_name="Detailed Description of Materials")
+    quantity = models.FloatField(verbose_name="Quantity/Volume")
+    unit = models.CharField(max_length=20, verbose_name="Unit (e.g., kg, pieces, liters)")
+    condition = models.CharField(
+        max_length=30,
+        choices=ResourceListing.CONDITION_CHOICES,
+        verbose_name="Condition"
+    )
+    availability = models.CharField(
+        max_length=20,
+        choices=ResourceListing.AVAILABILITY_CHOICES,
+        verbose_name="Availability"
+    )
+    location_barangay = models.CharField(max_length=100, verbose_name="Barangay")
+    location_latitude = models.FloatField(blank=True, null=True, verbose_name="Latitude")
+    location_longitude = models.FloatField(blank=True, null=True, verbose_name="Longitude")
+    image = models.ImageField(upload_to='resource_images/', blank=True, null=True, verbose_name="Image")
+
+    def __str__(self):
+        return self.user.username
+
+
 class Message(models.Model):
     sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sent_messages')
     recipient = models.ForeignKey(User, on_delete=models.CASCADE, related_name='received_messages')
