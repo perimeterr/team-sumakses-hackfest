@@ -1,5 +1,5 @@
-import Header from './Header.jsx';
-import Footer from './Footer.jsx';
+import Header from './Header/Header.jsx';
+import Footer from './Footer/Footer.jsx';
 import CreateAccount from './CreateAccount/CreateAccount.jsx';
 import styles from './App.module.css';
 import heroImage from './assets/Hero v2 - Desktop.png';
