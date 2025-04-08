@@ -1,0 +1,25 @@
+.appContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.mainContent {
+    flex: 1;
+}
+
+.heroSection {
+    position: relative;
+    text-align: center;
+    margin: 0;
+}
+
+.heroImage {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+}
