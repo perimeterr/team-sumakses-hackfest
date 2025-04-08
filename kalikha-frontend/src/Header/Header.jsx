@@ -10,8 +10,8 @@ function Header() {
             <nav>
                 <ul className={styles.navList}>
                     <li><a href="#">Listings</a></li>
-                    <li><a href="#">Sign In/Sign Up</a></li>
                     <li><a href="#">About</a></li>
+                    <li><a href="#">Sign In/Sign Up</a></li>
                 </ul>
             </nav>
         </header>
