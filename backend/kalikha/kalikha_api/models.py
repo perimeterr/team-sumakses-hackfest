@@ -11,9 +11,9 @@ class CustomUser(AbstractUser):
         choices=USER_TYPE_CHOICES,
         default='provider',
     )
-    name = models.CharField(max_length=255, verbose_name="User Name") # Added Name
-    description = models.TextField(blank=True, verbose_name="User Description") # Added Description
-    location = models.CharField(max_length=255, verbose_name="User Location") # Added Location
+    name = models.CharField(max_length=255, verbose_name="Name") # Added Name
+    description = models.TextField(blank=True, verbose_name="Description") # Added Description
+    location = models.CharField(max_length=255, verbose_name="Location") # Added Location
 
     def __str__(self):
         return self.username
