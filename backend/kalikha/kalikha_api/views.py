@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from .forms import SignUpForm, SignInForm
+from .models import ResourceListing
+from django.contrib.auth.decorators import login_required
 
 def sign_up(request):
     if request.user.is_authenticated:
@@ -35,9 +37,18 @@ def sign_in(request):
         sign_in_form = SignInForm()
     return render(request, 'sign_in.html', {'sign_in_form': sign_in_form})
 
+@login_required
 def home(request):
     return render(request, 'home.html')
 
+@login_required
 def sign_out(request):
     logout(request)
     return redirect('/signIn')
+
+@login_required
+def resource_listing_list(request):
+    resource_listings = ResourceListing.objects.all()
+
+    return render(request, "home.html", {"resource_listings": resource_listings})
+
