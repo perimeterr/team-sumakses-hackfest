@@ -1,0 +1,138 @@
+@import url("https://api.fontshare.com/v2/css?f=panchang@400,700,600,500,300,200&display=swap");
+@import url("https://api.fontshare.com/v2/css?f=general-sans@500,600,400,700&display=swap");
+
+.listingsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: 'Panchang';
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.searchContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchIconInside {
+    position: absolute;
+    left: 10px;
+    color: #4B5842;
+    font-size: 1.2rem;
+}
+
+.searchBarWithIcon {
+    padding: 10px 10px 10px 35px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 250px;
+    background-color: #D9E8B0;
+    color: #4B5842;
+}
+
+.horizontalBar {
+    width: 100%;
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 10px 0;
+}
+
+.listingsHeader {
+    font-size: 2.5em;
+    color: #4B5842;
+    margin: 0;
+}
+
+.listingsContent {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.itemsGrid {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.itemCard {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.itemCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.itemImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.itemName {
+    font-size: 1.35em;
+    margin: 5px 15px;
+    color: #FFC2C9;
+    font-family: 'Panchang';
+}
+
+.itemQuantity {
+    font-size: 1.2em;
+    margin: 10px;
+    color: #4B5842;
+    font-family: 'General Sans';
+}
+
+.itemProvider {
+    font-size: 1em;
+    margin: 10px;
+    color: #4B5842;
+    font-family: 'General Sans';
+}
+
+.heartButton {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transform: translate(425%,0%);
+}
+
+.heartIcon {
+    color: grey;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.heartIcon.liked {
+    color: #4B5842;
+}
