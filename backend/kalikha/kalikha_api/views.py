@@ -3,7 +3,45 @@ from django.http import JsonResponse
 from django.core import serializers
 from django.contrib.auth.decorators import login_required
 from .models import ResourceListing, MaterialCategory, ResourceMaterial
-from .forms import ResourceListingForm, MaterialCategoryForm, ResourceMaterialForm
+from .forms import ResourceListingForm, MaterialCategoryForm, ResourceMaterialForm, SignInForm, SignUpForm
+
+def sign_up(request):
+    if request.method == 'POST':
+        sign_up_form = SignUpForm(request.POST)
+        if sign_up_form.is_valid():
+            user = sign_up_form.save()
+            # Optionally log the user in immediately after signup
+            # login(request, user)
+            return JsonResponse({'status': 'success', 'message': 'User registered successfully'}, status=201)
+        else:
+            return JsonResponse({'status': 'error', 'errors': sign_up_form.errors}, status=400)
+    else:
+        # For a React frontend, you likely won't render a signup form directly from Django.
+        # You might just indicate that this endpoint is for POST requests.
+        return JsonResponse({'message': 'Signup endpoint for POST requests'}, status=405)
+
+def sign_in(request):
+    if request.method == 'POST':
+        sign_in_form = SignInForm(request.POST)
+        if sign_in_form.is_valid():
+            username = sign_in_form.cleaned_data['username']
+            password = sign_in_form.cleaned_data['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return JsonResponse({'status': 'success', 'message': 'Login successful'}, status=200)
+            else:
+                return JsonResponse({'status': 'error', 'message': 'Invalid username or password'}, status=401)
+        else:
+            return JsonResponse({'status': 'error', 'errors': sign_in_form.errors}, status=400)
+    else:
+        # For a React frontend, you likely won't render a signin form directly from Django.
+        # You might just indicate that this endpoint is for POST requests.
+        return JsonResponse({'message': 'Signin endpoint for POST requests'}, status=405)
+
+def sign_out(request):
+    logout(request)
+    return JsonResponse({'status': 'success', 'message': 'Logout successful'}, status=200)
 
 @login_required
 def resource_listing_list(request):
