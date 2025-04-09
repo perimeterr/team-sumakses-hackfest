@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import CustomUser
+from .models import CustomUser, ResourceListing, MaterialCategory, ResourceMaterial
 
 class CustomUserCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
@@ -41,3 +41,21 @@ class SignUpForm(forms.ModelForm):
 class SignInForm(forms.Form):
     username = forms.CharField(max_length=150)
     password = forms.CharField(widget=forms.PasswordInput)
+
+class ResourceListingForm(forms.ModelForm):
+    class Meta:
+        model = ResourceListing
+        exclude = ['provider']
+
+class MaterialCategoryForm(forms.ModelForm):
+    class Meta:
+        model = MaterialCategory
+        fields = '__all__'
+
+class ResourceMaterialForm(forms.ModelForm):
+    type = forms.ModelChoiceField(queryset=MaterialCategory.objects.all().order_by('name'))
+    resource_listing = forms.ModelChoiceField(queryset=ResourceListing.objects.all().order_by('name'))
+
+    class Meta:
+        model = ResourceMaterial
+        fields = '__all__'
