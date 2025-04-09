@@ -1,0 +1,77 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #4B5842;
+    color: #ffffff;
+    padding: 20px;
+    font-size: 0.9em;
+    border-top: 2px solid #000000;
+}
+
+.footerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 10px;
+}
+
+.logoSection {
+    flex: 1;
+    text-align: left;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.linksSection {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.linksSection a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.linksSection a:hover {
+    text-decoration: underline;
+}
+
+.socialSection {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.socialSection a {
+    color: #ffffff;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.footerBottom {
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.greenHeart {
+    color: #D9E8B0;
+}
+
+.horizontalBar {
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    margin: 10px 0;
+}

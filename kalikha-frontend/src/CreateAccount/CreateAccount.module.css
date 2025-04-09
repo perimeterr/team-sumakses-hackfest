@@ -1,0 +1,85 @@
+@import url("https://api.fontshare.com/v2/css?f=general-sans@500,600,400,700&display=swap");
+@import url("https://api.fontshare.com/v2/css?f=panchang@400,700,600,500,300,200&display=swap");
+
+
+.createAccountContainer {
+    font-family: 'Panchang';
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    height: 100vh;
+    background-color: #4B5842;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.imageSection {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.backdropImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.formSection {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    text-align: left;
+    transform: translate(20%,0%);
+}
+
+h2 {
+    font-size: 2em;
+    color: #FFC2C9;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 15px 0;
+    font-size: 1.2em;
+}
+
+.splitButton {
+    display: inline-flex;
+    border: 2px solid #ffffff;
+    overflow: hidden;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    font-family: sans-serif;
+    transform: translate(90%,20%);
+}
+
+.splitButton:hover {
+    background-color: #e7aab2e0; /* Change background color on hover */
+    border-color: #e7aab2e0; /* Match border color with background */
+}
+
+.textPart {
+    font-family: 'General Sans';
+    padding: 10px 20px;
+    color: #ffffff;
+    background: transparent;
+    font-weight: bold;
+}
+
+.arrowPart {
+    background: #ffffff;
+    color: #4B5842;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
