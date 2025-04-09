@@ -9,7 +9,7 @@ function CreateAccount() {
                 <img src={backdropImage} alt="Create Account Backdrop" className={styles.backdropImage} />
             </div>
             <div className={styles.formSection}>
-                <h2>Create Account</h2>
+                <h2 className={styles.createAccount}>Create Account</h2>
                 <p>I am...</p>
                 <form>
                     <label>
