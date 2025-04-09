@@ -1,15 +1,16 @@
 import styles from './Header.module.css';
 import logo from '../assets/desktop header logo.png';
+import { Link } from 'react-router-dom';
 
 function Header() {
     return (
         <header className={styles.header}>
-            <a href="#">
+            <Link to="/">
                 <img src={logo} alt="KaLikha Logo" className={styles.logo} />
-            </a>
+            </Link>
             <nav>
                 <ul className={styles.navList}>
-                    <li><a href="#">Listings</a></li>
+                    <li><Link to="/listings">Listings</Link></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Sign In/Sign Up</a></li>
                 </ul>
