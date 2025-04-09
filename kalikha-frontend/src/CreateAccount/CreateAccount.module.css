@@ -39,7 +39,7 @@
     transform: translate(20%,0%);
 }
 
-h2 {
+.createAccount {
     font-size: 2em;
     color: #FFC2C9;
     margin-bottom: 20px;
@@ -63,8 +63,8 @@ label {
 }
 
 .splitButton:hover {
-    background-color: #e7aab2e0; /* Change background color on hover */
-    border-color: #e7aab2e0; /* Match border color with background */
+    background-color: #e7aab2e0;
+    border-color: #e7aab2e0;
 }
 
 .textPart {

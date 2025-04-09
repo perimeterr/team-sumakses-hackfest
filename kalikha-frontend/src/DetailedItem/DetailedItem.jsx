@@ -108,7 +108,7 @@ const DetailedItem = (props) => {
                         </div>
                     </div>
                 </div>
-                <h2>Description:</h2>
+                <h2 className={styles.description}>Description:</h2>
                 <div 
                     className={styles.itemDescription}
                     dangerouslySetInnerHTML={{ __html: item.description }}
